@@ -1,0 +1,21 @@
+client_id = "1757cb0de3a842e0d9945fbddf87a87c"
+name = "Barb CS Agent"
+application_url = "https://shop-chat-agent-0dtd.onrender.com"
+embedded = true
+
+[build]
+automatically_update_urls_on_dev = true
+
+[webhooks]
+api_version = "2026-04"
+
+[access_scopes]
+scopes = "read_orders,read_product_listings,read_products,read_returns,read_shipping"
+optional_scopes = [ ]
+use_legacy_install_flow = false
+
+[auth]
+redirect_urls = [ "https://shop-chat-agent-0dtd.onrender.com/auth/callback", "https://lava-tribe.myshopify.com/auth/callback" ]
+
+[customer_authentication]
+redirect_uris = ["https://shop-chat-agent-0dtd.onrender.com/auth/callback", "https://lava-tribe.myshopify.com/auth/callback"]
