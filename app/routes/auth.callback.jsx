@@ -4,9 +4,10 @@ export async function loader({ request }) {
   const url = new URL(request.url);
   const code = url.searchParams.get("code");
   const state = url.searchParams.get("state");
-  const [conversationId, shopId] = state.split("-");
 
-  if (!code) return new Response(JSON.stringify({ error: "Authorization code is missing" }), { status: 400 });
+  if (!code || !state) return new Response(JSON.stringify({ error: "Missing required parameters" }), { status: 400 });
+
+  const [conversationId, shopId] = state.split("-");
 
   try {
     const tokenResponse = await exchangeCodeForToken(code, state);
