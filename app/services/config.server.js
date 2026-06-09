@@ -1,6 +1,6 @@
 export const AppConfig = {
   api: {
-    defaultModel: 'claude-sonnet-4-5',
+    defaultModel: 'claude-sonnet-4-6',
     maxTokens: 2000,
     defaultPromptType: 'standardAssistant',
   },
