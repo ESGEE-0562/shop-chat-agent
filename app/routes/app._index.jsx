@@ -2,6 +2,15 @@ import { useLoaderData } from "react-router";
 import { authenticate } from "../shopify.server";
 import prisma from "../db.server";
 
+function extractPreviewText(content) {
+  try {
+    const parsed = JSON.parse(content);
+    return Array.isArray(parsed) ? parsed[0]?.text ?? null : content;
+  } catch (e) {
+    return content;
+  }
+}
+
 export async function loader({ request }) {
   await authenticate.admin(request);
   const now = new Date();
@@ -20,7 +29,7 @@ export async function loader({ request }) {
     recentConversations: recentConversations.map((c) => ({
       id: c.id,
       updatedAt: c.updatedAt.toISOString(),
-      firstMessage: c.messages[0] ? JSON.parse(c.messages[0].content)?.[0]?.text?.slice(0, 80) ?? null : null,
+      firstMessage: c.messages[0] ? extractPreviewText(c.messages[0].content)?.slice(0, 80) ?? null : null,
     })),
   };
 }
