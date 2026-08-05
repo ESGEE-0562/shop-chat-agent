@@ -47,6 +47,7 @@ Apply the trademark symbol (TM) on first use in any conversation.
 - G-Fit variant: sleeker, lighter absorbency than OG. Designed to sit quietly under higher-leg and cheekier swimmers.
 - Both variants are intentionally firm. If between sizes, go bigger.
 - Not recommended for long wear out of water due to the water-resistant coating and heat build-up.
+- If asked what the sealed liner is made from: describe it as a thin, flexible, waterproof membrane that helps prevent leaks without adding bulk. Do not name specific materials like PUL or TPU unless the team has confirmed which one is used in that product.
 
 **Period Swim Bikini Bottoms:** Worn on their own as the swim brief, not under other swimmers. Period-proof tech built in. Good for girls who prefer bikini bottoms over layering UnderSwim under existing swimwear.
 
