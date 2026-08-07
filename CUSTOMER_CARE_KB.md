@@ -94,7 +94,7 @@ If someone sends measurements, help them sense-check against the size guide. Nev
 
 ### Between-size guidance (confirmed correct, 2026-08-07)
 
-- **UnderSwim OG and G-Fit:** go **bigger**. Both variants are intentionally firm and compressive by design, and the size chart is built around that firmness. This is the confirmed, correct guidance for UnderSwim - see the note below.
+- **UnderSwim OG and G-Fit:** if genuinely between sizes, go **bigger**. Both variants are intentionally firm and compressive by design, and the size chart is built around that firmness. This only applies when a customer is between two sizes - it is not a reason to size up generally or for comfort. This is the confirmed, correct guidance for UnderSwim - see the note below.
 - **All other styles** (UnderAustin, UnderDance, UnderShortie, Bumpers Briefs, PSBB, SwimSync): a straighter build tends to suit sizing down; more curve or a preference for comfort tends to suit sizing up.
 
 > **Known documentation conflict - flagged, not yet fixed in `SKILL.md`:** `SKILL.md` (the sizing-advisor skill) currently states customers should "always go smaller" when between sizes, including for UnderSwim OG/G-Fit, and frames this as a blanket rule for all products. This is confirmed **incorrect** for UnderSwim - the live production prompt and `BARB.md` are correct: UnderSwim OG/G-Fit customers should size **up**, not down, when between sizes. `SKILL.md` needs a follow-up edit to bring it in line. Until that edit lands, treat this file and the live prompt as the source of truth for UnderSwim sizing direction.
