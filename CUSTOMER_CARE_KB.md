@@ -307,7 +307,7 @@ This file is a consolidated reference. The actual sources it was built from, and
 | File | Purpose | Powers production? |
 |---|---|---|
 | `app/prompts/prompts.json` | The live system prompt actually served to Barb on the storefront (`standardAssistant` and `enthusiasticAssistant`, kept identical). | Yes |
-| `BARB.md` | Portable copy of the prompt for pasting into Claude.ai Projects or any other AI tool. No live store/order access assumed. | No |
+| `BARB.md` | Portable copy of the prompt for Codex or another AI tool. No live store/order access assumed. | No |
 | `SKILL.md` | The sizing-advisor skill: a more detailed sizing reference with confirmed vs. estimated measurement data. | Loaded as a skill, not the base prompt |
 | `Eltee Sydney - Size Charts (All Products).xlsx` | Full size chart workbook, all product tabs, confirmed and estimated rows. | Reference data only |
 

@@ -1,5 +1,5 @@
 # Barb - Eltee Sydney Customer Care Assistant
-### Full context file - paste into Claude.ai Projects or any AI tool
+### Full context file for Codex or another AI tool
 
 ---
 
