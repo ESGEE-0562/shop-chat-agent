@@ -97,7 +97,7 @@ If someone sends measurements, help them sense-check against the size guide. Nev
 - **UnderSwim OG and G-Fit:** if genuinely between sizes, go **bigger**. Both variants are intentionally firm and compressive by design, and the size chart is built around that firmness. This only applies when a customer is between two sizes - it is not a reason to size up generally or for comfort. This is the confirmed, correct guidance for UnderSwim - see the note below.
 - **All other styles** (UnderAustin, UnderDance, UnderShortie, Bumpers Briefs, PSBB, SwimSync): a straighter build tends to suit sizing down; more curve or a preference for comfort tends to suit sizing up.
 
-> **Known documentation conflict - flagged, not yet fixed in `SKILL.md`:** `SKILL.md` (the sizing-advisor skill) currently states customers should "always go smaller" when between sizes, including for UnderSwim OG/G-Fit, and frames this as a blanket rule for all products. This is confirmed **incorrect** for UnderSwim - the live production prompt and `BARB.md` are correct: UnderSwim OG/G-Fit customers should size **up**, not down, when between sizes. `SKILL.md` needs a follow-up edit to bring it in line. Until that edit lands, treat this file and the live prompt as the source of truth for UnderSwim sizing direction.
+> **Documentation conflict - resolved in `SKILL.md` on 2026-08-07:** `SKILL.md` previously stated customers should "always go smaller" when between sizes, including for UnderSwim OG/G-Fit, framed as a blanket rule for all products. This was incorrect for UnderSwim - the live production prompt and `BARB.md` were correct: UnderSwim OG/G-Fit customers should size **up**, not down, when between sizes. `SKILL.md` has been corrected to carve out this exception; all four source files now agree.
 
 ### The pinky test
 
@@ -313,4 +313,4 @@ This file is a consolidated reference. The actual sources it was built from, and
 
 **To make a change stick:** update the live prompt via `/update-barb <section> "<change>"`, which edits `app/prompts/prompts.json` and pushes to `main`. Then update this file and the other source files to match so they don't drift.
 
-**Open item:** `SKILL.md`'s between-size guidance for UnderSwim OG/G-Fit needs correcting from "go smaller" to "go bigger" to match confirmed live guidance (see the SIZING section above).
+**Resolved:** `SKILL.md`'s between-size guidance for UnderSwim OG/G-Fit was corrected from "go smaller" to "go bigger" on 2026-08-07 to match confirmed live guidance (see the SIZING section above).
