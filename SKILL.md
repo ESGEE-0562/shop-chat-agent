@@ -23,9 +23,13 @@ Three measurements matter, in this order of priority:
 
 ---
 
-## Between sizes - always go smaller
+## Between sizes - sizing direction
 
 The protective panel needs full contact with the body to seal. A snug fit is correct. A loose fit means the product won't work.
+
+**Default rule (all products except UnderSwim OG/G-Fit): go smaller.** A snug fit seals correctly; a loose one won't.
+
+**Exception - UnderSwim OG and G-Fit: go bigger.** Both variants are intentionally firm and compressive by design, and the size chart is already built around that firmness. If genuinely between sizes on the UnderSwim chart, size up, not down. This only applies when between sizes - it isn't a reason to size up generally or for comfort.
 
 ---
 
@@ -91,7 +95,7 @@ Girls whose low hip and high hip measurements are close together have less hip c
 ## Common customer scenarios
 
 **"My girl is between sizes"**
-Go smaller on all products. The protective panel needs full contact to seal.
+Go smaller, with one exception: UnderSwim OG and G-Fit, where she should go bigger. The protective panel needs full contact to seal, and for UnderSwim that firm, compressive fit is built into the chart on the assumption customers size up when between sizes.
 
 **"She tried the size but it feels tight"**
 A snug fit is correct for all Eltee products. The protective panel needs full contact to seal. If it's wearable, it's the right size.
@@ -100,10 +104,10 @@ A snug fit is correct for all Eltee products. The protective panel needs full co
 Check low hip first. If low hip confirms she's moved into the next size, W8 is the right call even if waist feels firm initially.
 
 **"She has a straight frame and the low hip measurement puts her between sizes"**
-Use high hip as the primary guide and go smaller if still between sizes.
+Use high hip as the primary guide. If still between sizes, go smaller - except on UnderSwim OG/G-Fit, where the call is to go bigger.
 
 **"Can she size up for comfort?"**
-Not recommended for any Eltee product. The protective panel won't seal properly if the product is too loose.
+Not recommended for any Eltee product, including UnderSwim. The protective panel won't seal properly if the product is too loose. This is different from the between-sizes case above: UnderSwim OG/G-Fit customers who are genuinely between sizes should size up, but that's a fit call, not a comfort preference.
 
 **Body with 68cm waist but low hip below average (e.g. 80cm)**
 This is a straighter frame. W8 is correct for UnderSwim - the waist seal and protective panel will work correctly. The lower hip running below average doesn't affect function.
@@ -113,7 +117,7 @@ This is a straighter frame. W8 is correct for UnderSwim - the waist seal and pro
 ## Product-specific guidance for customer care
 
 **UnderSwim OG and UnderSwim G-Fit**
-Firm, compressive fit by design. This is intentional - the product has to seal under outer swimwear in water. The size chart already accounts for this firm fit, so size straight from the chart. Do not cross-reference against other Eltee products. If between sizes on this chart, go smaller. Available AU 4-18. G-Fit has a lower side seam than OG - same sizing logic, different cut.
+Firm, compressive fit by design. This is intentional - the product has to seal under outer swimwear in water. The size chart already accounts for this firm fit, so size straight from the chart. Do not cross-reference against other Eltee products. If between sizes on this chart, go bigger - the opposite of the general rule, because these variants are intentionally firm. Available AU 4-18. G-Fit has a lower side seam than OG - same sizing logic, different cut.
 
 **Bumpers Briefs**
 Same fit profile as UnderSwim. Size straight from the Bumpers chart. Available AU 2-12.
