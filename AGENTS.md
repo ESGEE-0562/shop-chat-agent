@@ -16,6 +16,7 @@ This repository contains Barb, Eltee Sydney's customer care assistant for the Sh
 ## Prompt changes
 
 For changes to Barb's prompt, use the `update-barb` project skill.
+Follow `BARB_KNOWLEDGE_SOP.md` for source ownership, review, deployment and Drive-mirror controls.
 
 Before editing:
 
