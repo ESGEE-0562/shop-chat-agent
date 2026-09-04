@@ -1,8 +1,13 @@
 {{ 'chat.css' | asset_url | stylesheet_tag }}
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
+{% assign chat_bubble_color = block.settings.chat_bubble_color | downcase %}
+{% if chat_bubble_color == '#5046e4' %}
+  {% assign chat_bubble_color = '#37b29b' %}
+{% endif %}
+
 <div class="shop-ai-chat-container">
-  <div class="shop-ai-chat-bubble{% if block.settings.bubble_image != blank %} has-image{% endif %}{% if block.settings.bubble_label != blank %} has-label{% endif %}" style="background-color: {{ block.settings.chat_bubble_color }}">
+  <div class="shop-ai-chat-bubble{% if block.settings.bubble_image != blank %} has-image{% endif %}{% if block.settings.bubble_label != blank %} has-label{% endif %}" style="background-color: {{ chat_bubble_color }}">
     {% if block.settings.bubble_image != blank %}
       <img src="{{ block.settings.bubble_image | image_url: width: 120 }}" alt="Chat" class="shop-ai-chat-bubble-img" width="120" height="120">
     {% else %}
@@ -42,7 +47,7 @@
   window.shopChatConfig = {
     promptType: {{ block.settings.system_prompt | json }},
     welcomeMessage: {{ block.settings.welcome_message | json }},
-    bubbleColor: {{ block.settings.chat_bubble_color | json }},
+    bubbleColor: {{ chat_bubble_color | json }},
     quickReplies: [
       {{ block.settings.faq_1 | json }},
       {{ block.settings.faq_2 | json }},
