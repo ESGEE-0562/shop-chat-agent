@@ -1,9 +1,6 @@
 import OpenAI from "openai";
-import { createRequire } from "node:module";
 import AppConfig from "./config.server.js";
-
-const require = createRequire(import.meta.url);
-const systemPrompts = require("../prompts/prompts.json");
+import systemPrompts from "../prompts/prompts.json" with { type: "json" };
 
 export function formatToolsForOpenAI(tools = []) {
   return tools.map((tool) => ({
@@ -24,11 +21,15 @@ export function normaliseConversationHistory(messages = []) {
       continue;
     }
 
-    if (!Array.isArray(message.content)) continue;
+    if (!Array.isArray(message.content)) {
+      input.push({ role: message.role, content: serialiseHistoryValue(message.content) });
+      continue;
+    }
 
     const text = message.content
-      .filter((item) => item?.type === "text")
-      .map((item) => item.text)
+      .filter((item) => item?.type === "text" || !["tool_use", "tool_result"].includes(item?.type))
+      .map((item) => item?.type === "text" ? item.text : serialiseHistoryValue(item))
+      .filter(Boolean)
       .join("\n");
     if (text) input.push({ role: message.role, content: text });
 
@@ -55,17 +56,40 @@ export function normaliseConversationHistory(messages = []) {
 }
 
 export function responseToConversationMessage(response) {
+  if (response.status === "incomplete") {
+    const reason = response.incomplete_details?.reason || "unknown reason";
+    throw new Error(`OpenAI returned an incomplete response: ${reason}`);
+  }
+
   const content = [];
   if (response.output_text) content.push({ type: "text", text: response.output_text });
 
   for (const item of response.output || []) {
-    if (item.type !== "function_call") continue;
-    content.push({
-      type: "tool_use",
-      id: item.call_id,
-      name: item.name,
-      input: parseToolArguments(item.arguments),
-    });
+    if (item.type === "function_call") {
+      content.push({
+        type: "tool_use",
+        id: item.call_id,
+        name: item.name,
+        input: parseToolArguments(item.arguments),
+      });
+      continue;
+    }
+
+    const outputParts = item.type === "message" && Array.isArray(item.content)
+      ? item.content
+      : [item];
+
+    for (const part of outputParts) {
+      if (part?.type === "refusal" && part.refusal) {
+        content.push({ type: "text", text: part.refusal });
+      } else if (!response.output_text && part?.type === "output_text" && part.text) {
+        content.push({ type: "text", text: part.text });
+      }
+    }
+  }
+
+  if (content.length === 0) {
+    throw new Error("OpenAI returned an empty response");
   }
 
   return {
@@ -125,6 +149,16 @@ function serialiseToolOutput(content) {
       .join("\n");
   }
   return JSON.stringify(content ?? null);
+}
+
+function serialiseHistoryValue(value) {
+  if (typeof value === "string") return value;
+  try {
+    const serialised = JSON.stringify(value);
+    return serialised === undefined ? String(value) : serialised;
+  } catch {
+    return String(value);
+  }
 }
 
 export default { createOpenAIService };

@@ -11,12 +11,26 @@ test("formats Shopify tools for the Responses API", () => {
   assert.deepEqual(formatToolsForOpenAI([{
     name: "get_order_status",
     description: "Look up an order",
-    input_schema: { type: "object", properties: { email: { type: "string" } } },
+    input_schema: {
+      type: "object",
+      properties: {
+        email: { type: "string" },
+        order_number: { type: "string" },
+      },
+      required: ["email", "order_number"],
+    },
   }]), [{
     type: "function",
     name: "get_order_status",
     description: "Look up an order",
-    parameters: { type: "object", properties: { email: { type: "string" } } },
+    parameters: {
+      type: "object",
+      properties: {
+        email: { type: "string" },
+        order_number: { type: "string" },
+      },
+      required: ["email", "order_number"],
+    },
     strict: false,
   }]);
 });
@@ -32,6 +46,20 @@ test("converts stored tool history into Responses API input", () => {
     { role: "user", content: "Where is order 123?" },
     { type: "function_call", call_id: "call_1", name: "get_order_status", arguments: '{"order_number":"123"}' },
     { type: "function_call_output", call_id: "call_1", output: '{"found":true}' },
+  ]);
+});
+
+test("preserves JSON-shaped customer messages in conversation history", () => {
+  const result = normaliseConversationHistory([
+    { role: "user", content: 123 },
+    { role: "user", content: { question: "Where is my order?" } },
+    { role: "user", content: [true, { value: "keep me" }] },
+  ]);
+
+  assert.deepEqual(result, [
+    { role: "user", content: "123" },
+    { role: "user", content: '{"question":"Where is my order?"}' },
+    { role: "user", content: 'true\n{"value":"keep me"}' },
   ]);
 });
 
@@ -55,7 +83,7 @@ test("streams text, stores the response and dispatches tool calls", async () => 
   let request;
   const finalResponse = {
     output_text: "Checking now.",
-    output: [{ type: "function_call", call_id: "call_3", name: "get_order_status", arguments: '{"order_number":"123"}' }],
+    output: [{ type: "function_call", call_id: "call_3", name: "get_order_status", arguments: '{"email":"a@example.com","order_number":"123"}' }],
   };
   const fakeClient = {
     responses: {
@@ -102,4 +130,35 @@ test("ends the tool loop after a normal text response", () => {
 
   assert.equal(result.stop_reason, "end_turn");
   assert.deepEqual(result.content, [{ type: "text", text: "Here’s the sizing guide." }]);
+});
+
+test("surfaces OpenAI refusals as customer-visible text", () => {
+  const result = responseToConversationMessage({
+    output: [{
+      type: "message",
+      content: [{ type: "refusal", refusal: "I can’t help with that request." }],
+    }],
+  });
+
+  assert.equal(result.stop_reason, "end_turn");
+  assert.deepEqual(result.content, [{ type: "text", text: "I can’t help with that request." }]);
+});
+
+test("rejects empty OpenAI responses instead of ending with a blank message", () => {
+  assert.throws(
+    () => responseToConversationMessage({ output: [] }),
+    /empty response/,
+  );
+});
+
+test("rejects truncated OpenAI responses instead of treating them as complete", () => {
+  assert.throws(
+    () => responseToConversationMessage({
+      status: "incomplete",
+      incomplete_details: { reason: "max_output_tokens" },
+      output_text: "A cut-off answer",
+      output: [],
+    }),
+    /incomplete response: max_output_tokens/,
+  );
 });
