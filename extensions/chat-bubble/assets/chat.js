@@ -926,7 +926,7 @@
         const replies = window.shopChatConfig?.quickReplies;
         if (!replies || replies.length === 0) return;
 
-        const color = window.shopChatConfig?.bubbleColor || '#5046e4';
+        const color = window.shopChatConfig?.bubbleColor || '#37b29b';
         const container = document.createElement('div');
         container.classList.add('shop-ai-quick-replies');
 
