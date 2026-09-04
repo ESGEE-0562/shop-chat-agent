@@ -49,6 +49,20 @@ test("converts stored tool history into Responses API input", () => {
   ]);
 });
 
+test("preserves JSON-shaped customer messages in conversation history", () => {
+  const result = normaliseConversationHistory([
+    { role: "user", content: 123 },
+    { role: "user", content: { question: "Where is my order?" } },
+    { role: "user", content: [true, { value: "keep me" }] },
+  ]);
+
+  assert.deepEqual(result, [
+    { role: "user", content: "123" },
+    { role: "user", content: '{"question":"Where is my order?"}' },
+    { role: "user", content: 'true\n{"value":"keep me"}' },
+  ]);
+});
+
 test("converts OpenAI function calls into Barb's conversation contract", () => {
   const result = responseToConversationMessage({
     output_text: "I’ll check that.",
@@ -116,4 +130,35 @@ test("ends the tool loop after a normal text response", () => {
 
   assert.equal(result.stop_reason, "end_turn");
   assert.deepEqual(result.content, [{ type: "text", text: "Here’s the sizing guide." }]);
+});
+
+test("surfaces OpenAI refusals as customer-visible text", () => {
+  const result = responseToConversationMessage({
+    output: [{
+      type: "message",
+      content: [{ type: "refusal", refusal: "I can’t help with that request." }],
+    }],
+  });
+
+  assert.equal(result.stop_reason, "end_turn");
+  assert.deepEqual(result.content, [{ type: "text", text: "I can’t help with that request." }]);
+});
+
+test("rejects empty OpenAI responses instead of ending with a blank message", () => {
+  assert.throws(
+    () => responseToConversationMessage({ output: [] }),
+    /empty response/,
+  );
+});
+
+test("rejects truncated OpenAI responses instead of treating them as complete", () => {
+  assert.throws(
+    () => responseToConversationMessage({
+      status: "incomplete",
+      incomplete_details: { reason: "max_output_tokens" },
+      output_text: "A cut-off answer",
+      output: [],
+    }),
+    /incomplete response: max_output_tokens/,
+  );
 });
