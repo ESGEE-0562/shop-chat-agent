@@ -7,17 +7,18 @@
 - `.agents/skills/update-barb/SKILL.md` replaces the Claude `update-barb` command for Codex.
 - The obsolete Claude Code commands have been removed.
 
-## Runtime migration staged locally
+## Runtime migration completed
 
-- The application now uses the OpenAI Responses API with streaming and function calls.
-- The staged default is `gpt-5.6-terra` with reasoning effort `none`, configurable through `OPENAI_MODEL`. Terra is the better starting tier for a latency-sensitive customer-care bot; the production model remains approval-gated.
+- Production uses the OpenAI Responses API with streaming and function calls.
+- The default is `gpt-5.6-terra` with reasoning effort `none`, configurable through `OPENAI_MODEL`. Any production model change remains approval-gated.
 - Existing stored conversation and tool-result records are translated into the OpenAI input format.
-- Render has `OPENAI_API_KEY`. A minimal Responses API request returned HTTP 200 from `gpt-5.6-terra` on 7 August 2026.
-- No production credentials, deployment configuration or live store data has been changed.
-- The migration is isolated on `codex/barb-openai-runtime`; production remains on the pre-migration `main` code until explicit cutover approval.
+- Render has `OPENAI_API_KEY` and successfully called the production model.
+- Pull requests #10 and #11 were merged to `main`. Render deployed merge commit `6ec8914b8c4be66b950e697662462fbdf67fe0b6` on 4 September 2026.
+- Production checks passed for the public chat stream, live storefront widget, Shopify Storefront product search, Shopify Admin order lookup, and the email-plus-order-number privacy gate.
+- The previous Claude deployment and `CLAUDE_API_KEY` remain available temporarily for rollback.
 
-## Production cutover
+## Ongoing maintenance
 
-Optionally set `OPENAI_MODEL`, run a development smoke test, then approve the merge to `main`. Render deploys `main` automatically, so the merge is the production switch.
+Follow `BARB_KNOWLEDGE_SOP.md` for customer-care knowledge changes. Follow `RENDER_CUTOVER.md` for future releases and rollback.
 
-See `RENDER_CUTOVER.md` for the verified topology, test cases and rollback procedure.
+Render is configured to deploy `main` on commit, but the GitHub event did not trigger a deployment during the migration. Verify the exact commit appears in Render after every approved merge and use a manual deployment when it does not.

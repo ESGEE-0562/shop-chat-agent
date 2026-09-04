@@ -6,12 +6,12 @@
 - Web service: `shop-chat-agent`
 - Repository: `ESGEE-0562/shop-chat-agent`
 - Production branch: `main`
-- Auto-deploy: on commit
+- Auto-deploy: configured for on commit, but the GitHub trigger was unreliable on 4 September 2026
 - App URL: `https://shop-chat-agent-0dtd.onrender.com`
 - Database: Render PostgreSQL in the same Ohio region
 - Shopify app: `Barb CS Agent`
 
-Pushing to `main` is the production deployment action. Do not use `main` for the first OpenAI smoke test.
+Merging or pushing to `main` is a production action. After every approved merge, verify Render creates a deployment for the exact commit. If no event appears, deploy that exact `main` commit manually.
 
 ## Environment readiness
 
