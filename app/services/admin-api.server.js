@@ -1,4 +1,5 @@
 import prisma from '../db.server.js';
+import { selectAdminSession } from './admin-session-selection.js';
 import { normaliseOrderLookupInput } from './order-lookup-validation.js';
 
 const ORDER_QUERY = `
@@ -28,15 +29,11 @@ const ORDER_QUERY = `
 
 async function getAdminToken(shopDomain) {
   const hostname = new URL(shopDomain).hostname;
-  let session = await prisma.session.findFirst({
-    where: { shop: hostname },
+  const sessions = await prisma.session.findMany({
+    select: { shop: true, accessToken: true, isOnline: true, expires: true },
     orderBy: [{ isOnline: 'asc' }, { expires: 'desc' }]
   });
-  if (!session) {
-    session = await prisma.session.findFirst({
-      orderBy: [{ isOnline: 'asc' }, { expires: 'desc' }]
-    });
-  }
+  const session = selectAdminSession(sessions, hostname);
   console.log(`Admin session: ${session ? `found (shop: ${session.shop}, isOnline: ${session.isOnline})` : 'not found'}`);
   return { token: session?.accessToken || null, hostname: session?.shop || hostname };
 }
