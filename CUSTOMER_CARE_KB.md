@@ -1,6 +1,6 @@
 # Eltee Sydney - Customer Care Knowledge Base
 
-This file consolidates everything Barb (the Eltee Sydney customer care assistant) knows into a single reference. It merges the live production prompt (`app/prompts/prompts.json`), the portable context file (`BARB.md`), and the sizing-advisor reference (`SKILL.md`).
+This file consolidates Barb's readable customer-care knowledge. The deployed prompt remains `app/prompts/prompts.json`, while `SKILL.md` provides the detailed sizing reference.
 
 Use this as the master reference for customer care. If you update a fact here, update it in the source files too (see **Source files and maintenance** at the bottom).
 
@@ -97,7 +97,7 @@ If someone sends measurements, help them sense-check against the size guide. Nev
 - **UnderSwim OG and G-Fit:** if genuinely between sizes, go **bigger**. Both variants are intentionally firm and compressive by design, and the size chart is built around that firmness. This only applies when a customer is between two sizes - it is not a reason to size up generally or for comfort. This is the confirmed, correct guidance for UnderSwim - see the note below.
 - **All other styles** (UnderAustin, UnderDance, UnderShortie, Bumpers Briefs, PSBB, SwimSync): a straighter build tends to suit sizing down; more curve or a preference for comfort tends to suit sizing up.
 
-> **Documentation conflict - resolved in `SKILL.md` on 2026-08-07:** `SKILL.md` previously stated customers should "always go smaller" when between sizes, including for UnderSwim OG/G-Fit, framed as a blanket rule for all products. This was incorrect for UnderSwim - the live production prompt and `BARB.md` were correct: UnderSwim OG/G-Fit customers should size **up**, not down, when between sizes. `SKILL.md` has been corrected to carve out this exception; all four source files now agree.
+> **Documentation conflict - resolved in `SKILL.md` on 2026-08-07:** `SKILL.md` previously stated customers should "always go smaller" when between sizes, including for UnderSwim OG/G-Fit, framed as a blanket rule for all products. This was incorrect for UnderSwim: customers should size **up**, not down, when between sizes. `SKILL.md` has been corrected to carve out this exception and now agrees with the deployed prompt and this knowledge base.
 
 ### The pinky test
 
@@ -282,7 +282,7 @@ To look up an order: first collect the customer's email address AND their order 
 
 On Barb's very first response to a customer's first question in a conversation, she begins with: "Let me look into that for you. And if I get stuck, never fear, the humans are never far away."
 
-This behaviour is specific to the live Shopify storefront assistant and is not part of the portable `BARB.md` context file (which is meant for pasting into other AI tools without live store or order access).
+This behaviour is specific to the live Shopify storefront assistant. Portable AI tools without the authenticated Shopify connection cannot perform order lookups.
 
 ---
 
@@ -307,10 +307,9 @@ This file is a consolidated reference. The actual sources it was built from, and
 | File | Purpose | Powers production? |
 |---|---|---|
 | `app/prompts/prompts.json` | The live system prompt actually served to Barb on the storefront (`standardAssistant` and `enthusiasticAssistant`, kept identical). | Yes |
-| `BARB.md` | Portable copy of the prompt for Codex or another AI tool. No live store/order access assumed. | No |
 | `SKILL.md` | The sizing-advisor skill: a more detailed sizing reference with confirmed vs. estimated measurement data. | Loaded as a skill, not the base prompt |
 | `Eltee Sydney - Size Charts (All Products).xlsx` | Full size chart workbook, all product tabs, confirmed and estimated rows. | Reference data only |
 
-**To make a change stick:** use the `update-barb` Codex skill (`.agents/skills/update-barb/SKILL.md`), which edits `app/prompts/prompts.json`, validates that both prompt variants stay identical, and stops for your explicit approval before any commit, push or deploy (see `AGENTS.md`). Then update this file and the other source files to match so they don't drift.
+**To make a change stick:** follow `BARB_KNOWLEDGE_SOP.md` and use the `update-barb` Codex skill (`.agents/skills/update-barb/SKILL.md`). Update `app/prompts/prompts.json` and every affected supporting file in one reviewed pull request. The skill validates that both prompt variants stay identical and stops for explicit approval before any commit, push or deploy.
 
 **Resolved:** `SKILL.md`'s between-size guidance for UnderSwim OG/G-Fit was corrected from "go smaller" to "go bigger" on 2026-08-07 to match confirmed live guidance (see the SIZING section above).
