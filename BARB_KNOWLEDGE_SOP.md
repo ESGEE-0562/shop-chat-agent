@@ -20,12 +20,25 @@ Keep Barb's customer answers accurate, reviewable and consistent across producti
 | `app/prompts/prompts.json` | Barb's deployed instructions and durable customer-care knowledge | Production source of truth |
 | Shopify Storefront and Admin APIs | Current products, availability and customer-safe order lookup | Live commerce source of truth |
 | `CUSTOMER_CARE_KB.md` | Readable consolidated knowledge and evidence notes | Supporting reference |
-| `BARB.md` | Portable context for tools without Barb's live Shopify access | Supporting reference |
 | `SKILL.md` | Detailed sizing guidance and measurement provenance | Specialist supporting reference |
 | `AGENTS.md` and `.agents/skills/` | Rules for maintaining Barb with Codex | Operating instructions |
 | Drive mirror | Convenient read-only distribution copy | Never authoritative |
 
-Intentional differences must be labelled. For example, `BARB.md` does not include live order-access behaviour because portable tools do not have that access.
+Intentional differences between the deployed prompt and supporting references must be labelled.
+
+## Runtime and release boundary
+
+- GitHub repository: `ESGEE-0562/shop-chat-agent`
+- Production branch: `main`
+- Render project: `shop-chat-agent`
+- Render web service: `shop-chat-agent` (`srv-d7jgqfho3t8c73dgi0fg`)
+- Production URL: `https://shop-chat-agent-0dtd.onrender.com`
+- Shopify app: `Barb CS Agent`
+- Runtime: OpenAI Responses API through `app/services/openai.server.js`
+
+The Claude-to-OpenAI migration was completed on 4 September 2026 through pull requests #10 and #11. Claude is not part of the active application runtime. Render is configured to deploy `main`, but its GitHub trigger was unreliable during migration. After every approved merge, verify that Render deploys the exact merge commit and use a manual exact-commit deployment if no event appears.
+
+If a release fails, roll back to the previous known-good Render deployment, verify the public endpoint and storefront widget, and retain the failed deployment logs and test case. Do not rely on a retired provider as the ongoing rollback plan.
 
 ## Standard change workflow
 
@@ -54,7 +67,6 @@ The mirror is outbound from GitHub only. GitHub `main` wins if the files differ.
 The weekly sync should copy these files from GitHub `main` to the `shop-chat-agent-ELTEEHQ` Drive folder:
 
 - `CUSTOMER_CARE_KB.md`
-- `BARB.md`
 - `SKILL.md`
 - `BARB_KNOWLEDGE_SOP.md`
 
@@ -72,7 +84,7 @@ If someone edits a mirrored Drive file, move the proposed change into a GitHub b
 ## Weekly review checklist
 
 - [ ] Confirm the mirror automation ran successfully.
-- [ ] Confirm all four mirrored files match GitHub `main`.
+- [ ] Confirm all three mirrored files match GitHub `main`.
 - [ ] Review unresolved `HOLD`, `REVIEW` and `UNVERIFIED` notes.
 - [ ] Check that Shopify-dependent facts are still fetched live rather than duplicated in the prompt.
 - [ ] Check recent failed chats and escalations for a knowledge gap.
@@ -88,4 +100,3 @@ If someone edits a mirrored Drive file, move the proposed change into a GitHub b
 - [ ] The exact approved commit is live on Render.
 - [ ] Storefront response and logs are verified after deployment.
 - [ ] The previous Render deployment remains available for rollback.
-

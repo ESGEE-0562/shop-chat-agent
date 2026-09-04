@@ -6,7 +6,7 @@ This repository contains Barb, Eltee Sydney's customer care assistant for the Sh
 
 - Use Australian English. Be direct, practical and concise. Do not use em dashes.
 - Treat `app/prompts/prompts.json` as the deployed system-prompt source of truth.
-- Treat `BARB.md` as the readable reference and `CUSTOMER_CARE_KB.md` as supporting knowledge. Do not assume either is deployed until it has been reconciled with `app/prompts/prompts.json`.
+- Treat `CUSTOMER_CARE_KB.md` as the readable supporting reference. Do not assume it is deployed until it has been reconciled with `app/prompts/prompts.json`.
 - Keep `systemPrompts.standardAssistant.content` and `systemPrompts.enthusiasticAssistant.content` identical unless Sarah explicitly approves a deliberate experiment.
 - Never invent product, sizing, shipping, returns, certification, endorsement, stock or order information.
 - Never expose customer personal information, API keys, access tokens or environment values.
