@@ -1,9 +1,6 @@
 import OpenAI from "openai";
-import { createRequire } from "node:module";
 import AppConfig from "./config.server.js";
-
-const require = createRequire(import.meta.url);
-const systemPrompts = require("../prompts/prompts.json");
+import systemPrompts from "../prompts/prompts.json" with { type: "json" };
 
 export function formatToolsForOpenAI(tools = []) {
   return tools.map((tool) => ({
