@@ -11,12 +11,26 @@ test("formats Shopify tools for the Responses API", () => {
   assert.deepEqual(formatToolsForOpenAI([{
     name: "get_order_status",
     description: "Look up an order",
-    input_schema: { type: "object", properties: { email: { type: "string" } } },
+    input_schema: {
+      type: "object",
+      properties: {
+        email: { type: "string" },
+        order_number: { type: "string" },
+      },
+      required: ["email", "order_number"],
+    },
   }]), [{
     type: "function",
     name: "get_order_status",
     description: "Look up an order",
-    parameters: { type: "object", properties: { email: { type: "string" } } },
+    parameters: {
+      type: "object",
+      properties: {
+        email: { type: "string" },
+        order_number: { type: "string" },
+      },
+      required: ["email", "order_number"],
+    },
     strict: false,
   }]);
 });
@@ -55,7 +69,7 @@ test("streams text, stores the response and dispatches tool calls", async () => 
   let request;
   const finalResponse = {
     output_text: "Checking now.",
-    output: [{ type: "function_call", call_id: "call_3", name: "get_order_status", arguments: '{"order_number":"123"}' }],
+    output: [{ type: "function_call", call_id: "call_3", name: "get_order_status", arguments: '{"email":"a@example.com","order_number":"123"}' }],
   };
   const fakeClient = {
     responses: {
