@@ -311,6 +311,6 @@ This file is a consolidated reference. The actual sources it was built from, and
 | `SKILL.md` | The sizing-advisor skill: a more detailed sizing reference with confirmed vs. estimated measurement data. | Loaded as a skill, not the base prompt |
 | `Eltee Sydney - Size Charts (All Products).xlsx` | Full size chart workbook, all product tabs, confirmed and estimated rows. | Reference data only |
 
-**To make a change stick:** update the live prompt via `/update-barb <section> "<change>"`, which edits `app/prompts/prompts.json` and pushes to `main`. Then update this file and the other source files to match so they don't drift.
+**To make a change stick:** use the `update-barb` Codex skill (`.agents/skills/update-barb/SKILL.md`), which edits `app/prompts/prompts.json`, validates that both prompt variants stay identical, and stops for your explicit approval before any commit, push or deploy (see `AGENTS.md`). Then update this file and the other source files to match so they don't drift.
 
 **Resolved:** `SKILL.md`'s between-size guidance for UnderSwim OG/G-Fit was corrected from "go smaller" to "go bigger" on 2026-08-07 to match confirmed live guidance (see the SIZING section above).
