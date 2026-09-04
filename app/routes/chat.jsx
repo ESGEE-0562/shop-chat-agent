@@ -2,7 +2,7 @@ import MCPClient from "../mcp-client";
 import { saveMessage, getConversationHistory } from "../db.server";
 import AppConfig from "../services/config.server";
 import { createSseStream } from "../services/streaming.server";
-import { createClaudeService } from "../services/claude.server";
+import { createOpenAIService } from "../services/openai.server";
 import { createToolService } from "../services/tool.server";
 import { lookupOrder } from "../services/admin-api.server";
 
@@ -54,7 +54,7 @@ async function handleChatRequest(request) {
 }
 
 async function handleChatSession({ request, userMessage, conversationId, promptType, stream }) {
-  const claudeService = createClaudeService();
+  const assistantService = createOpenAIService();
   const toolService = createToolService();
   const shopId = request.headers.get("X-Shopify-Shop-Id");
   const shopDomain = request.headers.get("Origin");
@@ -80,7 +80,7 @@ async function handleChatSession({ request, userMessage, conversationId, promptT
     });
     let finalMessage = { role: 'user', content: userMessage };
     while (finalMessage.stop_reason !== "end_turn") {
-      finalMessage = await claudeService.streamConversation(
+      finalMessage = await assistantService.streamConversation(
         { messages: conversationHistory, promptType, tools: allTools },
         {
           onText: (textDelta) => stream.sendMessage({ type: 'chunk', chunk: textDelta }),
