@@ -31,3 +31,30 @@ test("requires the Shopify storefront origin", () => {
     /Shopify storefront origin/,
   );
 });
+
+test("rejects Shopify search operators in the order number", () => {
+  const base = {
+    shopDomain: "https://elteesydney.com.au",
+    email: "customer@example.com",
+  };
+
+  for (const orderNumber of [
+    "1234 email:target@example.com",
+    "*",
+    "1234 OR name:*",
+    "1234\"",
+  ]) {
+    assert.throws(
+      () => normaliseOrderLookupInput({ ...base, orderNumber }),
+      /unsupported characters/,
+    );
+  }
+});
+
+test("allows ordinary Shopify order prefixes and suffixes", () => {
+  assert.equal(normaliseOrderLookupInput({
+    shopDomain: "https://elteesydney.com.au",
+    email: "customer@example.com",
+    orderNumber: "#ELTEE-1234_AU.1",
+  }).orderNumber, "#ELTEE-1234_AU.1");
+});

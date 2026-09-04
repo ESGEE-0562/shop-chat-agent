@@ -5,6 +5,9 @@ export function normaliseOrderLookupInput(input = {}) {
 
   if (!shopDomain) throw new Error("Order lookup requires a Shopify storefront origin");
   if (!email || !orderNumber) throw new Error("Order lookup requires both email address and order number");
+  if (!/^#?[A-Za-z0-9][A-Za-z0-9._-]*$/.test(orderNumber)) {
+    throw new Error("Order number contains unsupported characters");
+  }
 
   return { shopDomain, email, orderNumber };
 }

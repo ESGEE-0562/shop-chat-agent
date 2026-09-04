@@ -45,7 +45,7 @@ export async function lookupOrder(input) {
   const { shopDomain, email, orderNumber } = normaliseOrderLookupInput(input);
   const { token, hostname } = await getAdminToken(shopDomain);
   if (!token) throw new Error('No admin session found for shop');
-  const normalized = orderNumber.replace(/^#*/, '#');
+  const normalized = `#${orderNumber.replace(/^#/, '')}`;
   const searchQuery = `name:${normalized}`;
   const response = await fetch(`https://${hostname}/admin/api/2026-04/graphql.json`, {
     method: 'POST',
