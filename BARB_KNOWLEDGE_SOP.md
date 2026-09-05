@@ -19,8 +19,10 @@ Keep Barb's customer answers accurate, reviewable and consistent across producti
 |---|---|---|
 | `app/prompts/prompts.json` | Barb's deployed instructions and durable customer-care knowledge | Production source of truth |
 | Shopify Storefront and Admin APIs | Current products, availability and customer-safe order lookup | Live commerce source of truth |
+| Live Shopify size chart | Current customer-facing size ranges and measurements | Live sizing source of truth |
 | `CUSTOMER_CARE_KB.md` | Readable consolidated knowledge and evidence notes | Supporting reference |
 | `SKILL.md` | Detailed sizing guidance and measurement provenance | Specialist supporting reference |
+| `Eltee Sydney - Size Charts (All Products).xlsx` | Broken legacy copy retained only for provenance | Not authoritative |
 | `AGENTS.md` and `.agents/skills/` | Rules for maintaining Barb with Codex | Operating instructions |
 | Drive mirror | Convenient read-only distribution copy | Never authoritative |
 
