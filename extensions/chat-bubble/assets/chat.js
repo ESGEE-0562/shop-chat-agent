@@ -987,7 +987,14 @@
   document.addEventListener('DOMContentLoaded', function() {
     ShopAIChat.init();
     window.openBarbChat = function(message) {
-      ShopAIChat.UI.toggleChatWindow();
+      const chatWindow = ShopAIChat.UI.elements.chatWindow;
+
+      if (!chatWindow.classList.contains('active')) {
+        ShopAIChat.UI.toggleChatWindow();
+      } else {
+        ShopAIChat.UI.elements.chatInput.focus();
+      }
+
       if (message) {
         setTimeout(function() {
           ShopAIChat.QuickReplies.hide();
@@ -996,6 +1003,24 @@
         }, 300);
       }
     };
+
+    // Keep existing storefront links such as /pages/contact-us#barb-chat
+    // opening Barb in place instead of navigating away from the current page.
+    document.addEventListener('click', function(event) {
+      const target = event.target instanceof Element
+        ? event.target.closest('a[href$="#barb-chat"]')
+        : null;
+
+      if (!target) return;
+
+      event.preventDefault();
+      window.openBarbChat();
+    });
+
+    // Also support direct visits and old bookmarks that already contain the hash.
+    if (window.location.hash === '#barb-chat') {
+      window.openBarbChat();
+    }
 
     // Auto-open for links like yourstore.com/?barb=open (optionally with
     // &barb_msg=... to send a message straight away), so marketing links
