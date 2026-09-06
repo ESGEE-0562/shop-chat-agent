@@ -27,7 +27,7 @@ Three measurements matter, in this order of priority:
 
 The protective panel needs full contact with the body to seal. A snug fit is correct. A loose fit means the product won't work.
 
-**Default rule (all products except UnderSwim OG/G-Fit): go smaller.** A snug fit seals correctly; a loose one won't.
+**Default rule for all products except UnderSwim OG/G-Fit:** a straighter build tends to suit the smaller size; more curve or a comfort preference tends to suit the larger size. In either case, the protective panel must remain in firm contact with the body.
 
 **Exception - UnderSwim OG and G-Fit: go bigger.** Both variants are intentionally firm and compressive by design, and the size chart is already built around that firmness. If genuinely between sizes on the UnderSwim chart, size up, not down. This only applies when between sizes - it isn't a reason to size up generally or for comfort.
 
@@ -40,10 +40,10 @@ The protective panel needs full contact with the body to seal. A snug fit is cor
 | UnderSwim OG | AU 4-18 | Firm, compressive | Sizes already account for firm fit. Do not cross-reference with other products. |
 | UnderSwim G-Fit | AU 4-18 | Firm, compressive | Same sizing logic as OG. Lower side seam, different cut. |
 | Bumpers Briefs | AU 2-12 | Firm, compressive | Same fit profile as UnderSwim. |
-| UnderAustin | AU 4-14 | Relaxed athletic | W16-W18 not yet available. High waistband - use lower waist measurement alongside low hip. |
+| UnderAustin | AU 4-18 | Relaxed athletic | High waistband - use lower waist measurement alongside low hip. |
 | SwimSync Period Pro | AU 4-14 | True to size | Compressive one-piece. Fabric stretch means garment fits at correct AU size despite looking small flat. Use SwimSync's own chart. |
 | Period Swim Bikini Bottom (PSBB) | AU 4-12 | Relaxed athletic | Designed for movement in water. |
-| UnderDance | AU 2-14 | Relaxed athletic | Designed for dance, gymnastics, acro. Full range of movement. |
+| UnderDance | AU 2-18 | Relaxed athletic | Designed for dance, gymnastics, acro. Full range of movement. |
 | UnderShortie | AU 2-14 | Relaxed athletic | Same sizing logic as UnderDance. Factory spec still being confirmed. |
 
 ---
@@ -95,7 +95,7 @@ Girls whose low hip and high hip measurements are close together have less hip c
 ## Common customer scenarios
 
 **"My girl is between sizes"**
-Go smaller, with one exception: UnderSwim OG and G-Fit, where she should go bigger. The protective panel needs full contact to seal, and for UnderSwim that firm, compressive fit is built into the chart on the assumption customers size up when between sizes.
+For UnderSwim OG and G-Fit, go bigger. For other styles, a straighter build tends to suit the smaller size; more curve or a comfort preference tends to suit the larger size. The protective panel must remain in firm contact with the body.
 
 **"She tried the size but it feels tight"**
 A snug fit is correct for all Eltee products. The protective panel needs full contact to seal. If it's wearable, it's the right size.
@@ -104,7 +104,7 @@ A snug fit is correct for all Eltee products. The protective panel needs full co
 Check low hip first. If low hip confirms she's moved into the next size, W8 is the right call even if waist feels firm initially.
 
 **"She has a straight frame and the low hip measurement puts her between sizes"**
-Use high hip as the primary guide. If still between sizes, go smaller - except on UnderSwim OG/G-Fit, where the call is to go bigger.
+Use high hip as the primary guide. If still between sizes, a straighter build tends to suit the smaller size, except on UnderSwim OG/G-Fit where the call is to go bigger.
 
 **"Can she size up for comfort?"**
 Not recommended for any Eltee product, including UnderSwim. The protective panel won't seal properly if the product is too loose. This is different from the between-sizes case above: UnderSwim OG/G-Fit customers who are genuinely between sizes should size up, but that's a fit call, not a comfort preference.
@@ -126,13 +126,13 @@ Same fit profile as UnderSwim. Size straight from the Bumpers chart. Available A
 True to size. Compressive one-piece swimsuit construction - the fabric stretch means the garment fits correctly at the right AU size despite looking small flat. Size straight from the SwimSync chart. Available AU 4-14.
 
 **Period Swim Bikini Bottom (PSBB)**
-Relaxed athletic fit designed for movement in water. Available AU 4-12. Low hip primary, go smaller if between sizes.
+Relaxed athletic fit designed for movement in water. Available AU 4-12. Low hip primary. If between sizes, consider body shape and panel contact rather than applying a blanket size-down rule.
 
 **UnderAustin**
-Performance period undershort. Relaxed athletic fit with a high waistband. Two waist measurements in the spec (upper and lower) - use lower waist alongside low hip. Available AU 4-14, with AU 16-18 coming.
+Performance period undershort. Relaxed athletic fit with a high waistband. Two waist measurements in the spec (upper and lower) - use lower waist alongside low hip. Available AU 4-18.
 
 **UnderDance**
-Relaxed athletic fit designed for dance, gymnastics and acro - full range of movement. Available AU 2-14.
+Relaxed athletic fit designed for dance, gymnastics and acro - full range of movement. Available AU 2-18.
 
 **UnderShortie**
 Relaxed athletic fit. Same sizing logic as UnderDance. Factory spec still being confirmed - size as per chart.
@@ -142,5 +142,5 @@ Relaxed athletic fit. Same sizing logic as UnderDance. Factory spec still being 
 ## Files in this folder
 
 - SKILL.md - this file
-- Eltee Sydney - Size Charts (All Products).xlsx - full size chart workbook with all product tabs
-- Eltee Sydney - Sizing Considerations - sizing guidance doc for customer care and website copy
+- Live Shopify size chart - current customer-facing chart for six product groups, with AU, US, UK, waist and low-hip columns: https://elteesydney.com.au/pages/size-chart
+- Eltee Sydney - Size Charts (All Products).xlsx - broken legacy copy; do not use as sizing authority
