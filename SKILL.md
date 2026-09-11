@@ -13,7 +13,7 @@ Every Eltee product has a protective panel that must press firmly against the bo
 
 ## The Pinky Test
 
-The Pinky Test: fit check before committing. Before removing the hygiene sticker, try your Eltees on over clean underwear. Slide a pinky finger under the fabric around the widest part of the bum. Pinky slides in easily with almost no resistance = too big. Pinky struggles to get in and feels like an elastic band digging in = too small. Pinky slides in with a bit of resistance, but not a fight = just right. This is fit guidance, not a guarantee against leaks.
+The Pinky Test: fit check before committing. Before removing the hygiene sticker, try your Eltees on over clean underwear. Slide a pinky finger under the seam around the widest part of the bum. Pinky slides in easily with almost no resistance = too big. Pinky struggles to get in and feels like an elastic band digging in = too small. Pinky slides in with a bit of resistance, but not a fight = just right. This is fit guidance, not a guarantee against leaks.
 
 ---
 
