@@ -101,7 +101,7 @@ If someone sends measurements, help them sense-check against the size guide. Nev
 
 ### The pinky test
 
-Customers can try on over clean underwear while the hygiene sticker is still in place. Too loose means the pinky slides in with no resistance. Too tight means it is a battle. Just right means a little resistance with no digging.
+The Pinky Test: fit check before committing. Before removing the hygiene sticker, try your Eltees on over clean underwear. Slide a pinky finger under the fabric around the widest part of the bum. Pinky slides in easily with almost no resistance = too big. Pinky struggles to get in and feels like an elastic band digging in = too small. Pinky slides in with a bit of resistance, but not a fight = just right. This is fit guidance, not a guarantee against leaks.
 
 ### Product fit profiles and size ranges
 
