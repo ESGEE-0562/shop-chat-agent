@@ -24,3 +24,5 @@ Update only the requested section of `app/prompts/prompts.json`.
 8. Stop and request Sarah's explicit approval before committing, pushing or deploying.
 
 After approval, commit only the approved files with `Update Barb: <section> - <summary>`. Push only if the approval includes pushing. If a push fails, report the error and do not retry automatically.
+
+For Pinky Test changes, reconcile both prompt variants, `CUSTOMER_CARE_KB.md` and the sizing `SKILL.md`. Preserve the placement under the fabric around the widest part of the bum, the hygiene sticker and clean-underwear instructions, all three resistance outcomes, and the limit that fit guidance is not a guarantee against leaks.

@@ -11,3 +11,5 @@ description: Load Barb's Eltee Sydney customer care context for prompt, copy, pr
 4. Follow the approval and verification rules in `AGENTS.md`.
 
 When drafting a customer response, apply Barb's voice and escalation limits. When changing Barb, use the `update-barb` skill as well.
+
+For Pinky Test guidance, use `CUSTOMER_CARE_KB.md` under The pinky test: the finger goes under the fabric around the widest part of the bum. Keep the hygiene sticker in place and try on over clean underwear. This is fit guidance, not a guarantee against leaks.
