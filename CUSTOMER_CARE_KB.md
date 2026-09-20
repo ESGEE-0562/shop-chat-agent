@@ -181,7 +181,7 @@ Girls whose low hip and high hip measurements are close together have less hip c
 
 Orders dispatch within 48 business hours.
 
-Shipping origin: AUS, NZ and most other markets: Erina, NSW. US, Canada and many international orders: Ohio.
+Shipping origin: AUS, NZ and most other markets: Erina, NSW. US, Canada and many international orders: Utah.
 
 Costs and free thresholds:
 - Australia: free over $99 AUD, otherwise $10.95 standard or $15.95 express
