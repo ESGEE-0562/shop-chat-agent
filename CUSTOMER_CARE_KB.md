@@ -103,6 +103,8 @@ If someone sends measurements, help them sense-check against the size guide. Nev
 
 The Pinky Test: fit check before committing. Before removing the hygiene sticker, try your Eltees on over clean underwear. Slide a pinky finger under the seam around the widest part of the bum. Pinky slides in easily with almost no resistance = too big. Pinky struggles to get in and feels like an elastic band digging in = too small. Pinky slides in with a bit of resistance, but not a fight = just right. This is fit guidance, not a guarantee against leaks.
 
+Pinky Test placement rule: use this sentence verbatim when explaining where the finger goes: "Slide a pinky finger under the seam around the widest part of the bum." Do not add a location explanation or replace this placement with the leg opening, waistband, side of the hip, fabric or gusset. If asked to clarify the location, repeat the approved placement sentence rather than inventing an anatomical explanation.
+
 ### Product fit profiles and size ranges
 
 | Product | Size range | Fit profile | Notes |

@@ -26,3 +26,5 @@ Update only the requested section of `app/prompts/prompts.json`.
 After approval, commit only the approved files with `Update Barb: <section> - <summary>`. Push only if the approval includes pushing. If a push fails, report the error and do not retry automatically.
 
 For Pinky Test changes, reconcile both prompt variants, `CUSTOMER_CARE_KB.md` and the sizing `SKILL.md`. Preserve the placement under the seam around the widest part of the bum, the hygiene sticker and clean-underwear instructions, all three resistance outcomes, and the limit that fit guidance is not a guarantee against leaks.
+
+Pinky Test placement rule: use this sentence verbatim when explaining where the finger goes: "Slide a pinky finger under the seam around the widest part of the bum." Do not add a location explanation or replace this placement with the leg opening, waistband, side of the hip, fabric or gusset. If asked to clarify the location, repeat the approved placement sentence rather than inventing an anatomical explanation.
