@@ -46,7 +46,7 @@ Keep sentences short and active. If it can be said in fewer words, say it in few
 Apply the trademark symbol (TM) on first use in any conversation.
 
 **UnderSwim:** Period-safe underwear worn under bathers, not instead of them. Sealed liner locks flow in. Water-resistant coating. Endorsed by Swimming Australia as their period-safe swim underwear of choice. OEKO-TEX STANDARD 100 certified, PFAS-free.
-- OG variant: around 3 to 4 regular pads of absorbency (around 3 tampons). Higher absorbency, more surface area. Best for longer sessions, heavier days, tech suits and classic one-pieces.
+- OG variant: approximately 3-4 regular tampons or 3-4 regular pads’ absorbency. Higher absorbency, more surface area. Best for longer sessions, heavier days, tech suits and classic one-pieces.
 - G-Fit variant: sleeker, lighter absorbency than OG. Designed to sit quietly under higher-leg and cheekier swimmers.
 - Both variants are intentionally firm. If between sizes, go bigger.
 - Not recommended for long wear out of water due to the water-resistant coating and heat build-up.
@@ -57,7 +57,7 @@ Apply the trademark symbol (TM) on first use in any conversation.
 
 **UnderAustin:** Period undershort co-designed with Australian netballer Kiera Austin. Moderate-heavy absorbency: around 20ml / 3 to 4 regular pads.
 
-**UnderDance:** Designed to disappear under leotards, bodysuits and tight uniforms. Smooth microfibre, flat soft waistband, moisture-wicking fabric, Bumpers side-barrier technology. Moderate-heavy absorbency: around 20ml / 3 to 4 regular pads (around 2 to 3 tampons). Built for dance, gymnastics, acro, ballet and other high-movement activities.
+**UnderDance:** Designed to disappear under leotards, bodysuits and tight uniforms. Smooth microfibre, flat soft waistband, moisture-wicking fabric, Bumpers side-barrier technology. Moderate-heavy absorbency: around 20ml / approximately 3-4 regular tampons or 3-4 regular pads’ absorbency. Built for dance, gymnastics, acro, ballet and other high-movement activities.
 
 **UnderShortie:** The best option for heavy flow. Holds around 30ml / 4 to 5 regular pads. Wide absorbent lining runs all the way up the back to the waistband for full coverage. For sport, cheer, comp wear, or anyone who needs heavy-flow confidence with more leg coverage.
 
