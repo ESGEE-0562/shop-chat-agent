@@ -1,0 +1,17 @@
+{
+  "name": "barb",
+  "version": "1.0.0",
+  "description": "Eltee Sydney customer-care guidance and controlled Barb knowledge maintenance using current canonical sources.",
+  "author": {
+    "name": "Eltee Sydney"
+  },
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Barb",
+    "shortDescription": "Customer care and knowledge",
+    "longDescription": "Loads Barb customer-care guidance and prepares evidenced knowledge updates. Uses current repository sources and authorised commerce access. Preserves approval gates for release and live data changes.",
+    "developerName": "Eltee Sydney",
+    "category": "Productivity",
+    "defaultPrompt": "Use Barb to help with customer care."
+  }
+}

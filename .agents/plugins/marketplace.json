@@ -1,0 +1,20 @@
+{
+  "name": "eltee-barb",
+  "interface": {
+    "displayName": "Eltee Barb"
+  },
+  "plugins": [
+    {
+      "name": "barb",
+      "source": {
+        "source": "local",
+        "path": "./plugins/barb"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity"
+    }
+  ]
+}
