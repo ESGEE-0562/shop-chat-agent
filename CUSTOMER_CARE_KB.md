@@ -257,7 +257,7 @@ For odour during wear: change into a clean pair and rinse the worn pair promptly
 
 For post-wash odour: first check detergent dosing against the detergent instructions and load size, whether the machine is overloaded, and whether the pair is completely dry before wear or storage. Address these checks before suggesting an additional treatment.
 
-Offer one treatment at a time, chosen for the issue and treatments already tried. Don't combine treatments or add a treatment to chemicals already on the garment. The cold-water treatment steps below are separate from the usual lukewarm after-use rinse.
+Offer at most one treatment recipe per reply, chosen for the issue and treatments already tried. Don't list alternative recipes or plan a second treatment for a later wash in the same reply. Before recommending a treatment, establish any missing Eltee style, issue timing and treatments already used; for post-wash odour, establish detergent dosing, machine loading and complete drying first. If asked about mixing, start by saying not to mix them, then establish any missing details before recommending at most one suitable treatment. Don't combine treatments or add a treatment to chemicals already on the garment. The cold-water treatment steps below are separate from the usual lukewarm after-use rinse.
 
 ### White vinegar for lingering odour
 
